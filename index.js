@@ -6,15 +6,52 @@ const names = ["Halo", "Angel", "Nyoman", "Ketut", "Aisyah"];
 // "1. Nama"
 // "2. Nama"
 // ...
-const sorter = null;
+const sorter = (nameArray, sortType) => {
+  let result = sortType(nameArray);
+  return result;
+};
 
 // TODO: Fungsi untuk mengurutkan array of string secara ascending
 // mengembalikan array yang sudah diurutkan
-const sortAscending = null;
+const sortAscending = (nameArray) => {
+  // Sort array ascendingly
+  let sortedName = nameArray.sort();
+  
+  // Create array containing index number + 1
+  let indexNumber = [];
+  for (const element of nameArray) {
+    indexNumber.push(nameArray.indexOf(element) + 1);
+  }
+
+  // Merged indexNumber and sortedName
+  let mergedArr = [];
+  for (let i = 0; i < nameArray.length; i++) {
+    mergedArr.push(`${indexNumber[i]}. ${sortedName[i]}`);
+  }
+
+  return mergedArr;
+};
 
 // TODO: Fungsi untuk mengurutkan array of string secara descending
 // mengembalikan array yang sudah diurutkan
-const sortDescending = null;
+const sortDescending = (nameArray) => {
+  // Sort array ascendingly
+  let sortedName = nameArray.reverse();
+
+  // Create array containing index number + 1
+  let indexNumber = [];
+  for (const element of nameArray) {
+    indexNumber.push(nameArray.indexOf(element) + 1);
+  }
+
+  // Merged indexNumber and sortedName
+  let mergedArr = [];
+  for (let i = 0; i < nameArray.length; i++) {
+    mergedArr.push(`${indexNumber[i]}. ${sortedName[i]}`);
+  }
+
+  return mergedArr;
+};
 
 // ! JANGAN DIMODIFIKASI
 (function main() {
