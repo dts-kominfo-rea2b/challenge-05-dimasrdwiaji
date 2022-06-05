@@ -7,8 +7,21 @@ const names = ["Halo", "Angel", "Nyoman", "Ketut", "Aisyah"];
 // "2. Nama"
 // ...
 const sorter = (nameArray, sortType) => {
+  // Return sorted name (ascendingly or descendingly based on sortType)
   let result = sortType(nameArray);
-  return result;
+
+  // Create index number + 1
+  let indexNumber = [];
+  for (const element of nameArray) {
+    indexNumber.push(nameArray.indexOf(element) + 1);
+  }
+
+  // Merged index number + 1 and sortedName
+  let mergedArr = [];
+  for (let i = 0; i < nameArray.length; i++) {
+    mergedArr.push(`${indexNumber[i]}. ${result[i]}`);
+  }
+  return mergedArr;
 };
 
 // TODO: Fungsi untuk mengurutkan array of string secara ascending
@@ -16,20 +29,8 @@ const sorter = (nameArray, sortType) => {
 const sortAscending = (nameArray) => {
   // Sort array ascendingly
   let sortedName = nameArray.sort();
-  
-  // Create array containing index number + 1
-  let indexNumber = [];
-  for (const element of nameArray) {
-    indexNumber.push(nameArray.indexOf(element) + 1);
-  }
 
-  // Merged indexNumber and sortedName
-  let mergedArr = [];
-  for (let i = 0; i < nameArray.length; i++) {
-    mergedArr.push(`${indexNumber[i]}. ${sortedName[i]}`);
-  }
-
-  return mergedArr;
+  return sortedName;
 };
 
 // TODO: Fungsi untuk mengurutkan array of string secara descending
@@ -38,19 +39,7 @@ const sortDescending = (nameArray) => {
   // Sort array ascendingly
   let sortedName = nameArray.reverse();
 
-  // Create array containing index number + 1
-  let indexNumber = [];
-  for (const element of nameArray) {
-    indexNumber.push(nameArray.indexOf(element) + 1);
-  }
-
-  // Merged indexNumber and sortedName
-  let mergedArr = [];
-  for (let i = 0; i < nameArray.length; i++) {
-    mergedArr.push(`${indexNumber[i]}. ${sortedName[i]}`);
-  }
-
-  return mergedArr;
+  return sortedName;
 };
 
 // ! JANGAN DIMODIFIKASI
